@@ -15,14 +15,14 @@ app.use(function(req, res, next) {
 
  mongoose = require('mongoose'),
   Task = require('./api/models/task'),
-  //bodyParser = require('body-parser');
+  bodyParser = require('body-parser');
   
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost:27017/Tododb'); 
 
 
-//app.use(bodyParser.urlencoded({ extended: true }));
-//app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 
 var routes = require('./routes/taskroutes');
