@@ -8,8 +8,10 @@ import { Task } from '../task';
   templateUrl: './task-form.component.html',
   styleUrls: ['./task-form.component.css']
 })
+
 export class TaskFormComponent implements OnInit {
   task:Task = {
+  id:0,
   name:"task name",
   Created_date :new Date(),
   status:"completed"
@@ -19,9 +21,13 @@ export class TaskFormComponent implements OnInit {
   ngOnInit() {
   }
   
-  Create (){
+  Save (){
 	
-	this.tasksService.CreateTask(this.task);
+  if(this.task.id > 0)
+	   this.tasksService.CreateTask(this.task);
+  else
+      this.tasksService.UpdateTask(this.task);
+
 	console.log(this.task.name);
   }
 

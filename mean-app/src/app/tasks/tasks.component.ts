@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TasksService } from '../tasks.service';
+import { RouterModule, Routes,Router } from '@angular/router';
 
 
 @Component({
@@ -11,12 +12,25 @@ export class TasksComponent implements OnInit {
 	  tasks: any = [];
 
 
-  constructor(private tasksService: TasksService) { }
+  constructor(private router: Router, private tasksService: TasksService) { }
 
   ngOnInit() {
   this.tasksService.getAllTasks().subscribe(tasks => {
       this.tasks = tasks;
     });
+  }
+
+  UpdateTask(id:number){
+
+      this.router.navigate(['/tasks/update', id]);
+
+  }
+
+
+  DeleteTask(id:number){
+
+      this.tasksService.DeleteTask(id);
+
   }
 
 }

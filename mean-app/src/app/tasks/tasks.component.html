@@ -4,7 +4,8 @@
     <div class="card card-block">
       <h4 class="card-title">{{ task.status }}</h4>
       <p class="card-text">{{task.Created_date}}</p>
-      
+      <button (click)="UpdateTask(task.id)">Edit</button>
+      <button (click)="DeleteTask(task.id)">X</button>
     </div>
   </div>
 </div>

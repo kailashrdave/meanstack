@@ -23,5 +23,27 @@ return this.http.post('http://localhost:8000/tasks', data, {headers: this.header
       .toPromise()
     .then(res => res.json().data as Task);
   }
+
+  UpdateTask(task:Task){
+	var data :string = JSON.stringify(task);
+	return this.http.put('http://localhost:8000/tasks/'+ task.id, data, {headers: this.headers})
+      .toPromise()
+    .then(res => res.json().data as Task);
+  }
+
+
+  GetTask(id:number){
+
+return this.http.get('http://localhost:8000/tasks/'+id, {headers: this.headers})
+      .toPromise()
+    .then(res => res.json().data as Task);
+  }
+
+    DeleteTask(id:number){
+
+return this.http.delete('http://localhost:8000/tasks/'+id, {headers: this.headers})
+      .toPromise()
+    .then(res => res.json().data as Task);
+  }
 } 
 

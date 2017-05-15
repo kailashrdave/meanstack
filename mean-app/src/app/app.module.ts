@@ -22,6 +22,10 @@ const ROUTES = [
   {
     path: 'tasks/create',
     component: TaskFormComponent
+  },
+  {
+    path: 'tasks/update:id',
+    component: TaskFormComponent
   }
 ];
 

@@ -1,9 +1,11 @@
 <p>
-  task-form works! {{task.name}}
+  Task Details {{task.name}}
 </p>
 
+<input type="hidden" [(ngModel)]="task.id">
 Name: <input type="text" [(ngModel)]="task.name">
 Date: <input type="text" [(ngModel)]="task.Created_date">
 Status: <input type="text" [(ngModel)]="task.status">
 
-<button (click)="Create()">Create</button>
+
+<button (click)="Save()">Save Task</button>
