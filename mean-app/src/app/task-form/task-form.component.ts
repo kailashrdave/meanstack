@@ -13,7 +13,7 @@ import { Task } from '../task';
 
 export class TaskFormComponent implements OnInit {
   task:Task = {
-  id:0,
+  
   name:"task name",
   Created_date :new Date(),
   status:"completed"
@@ -43,22 +43,14 @@ export class TaskFormComponent implements OnInit {
   if(!this.isUpdate)
 	   this.tasksService.CreateTask(this.task);
   else
-      this.tasksService.UpdateTask(this.task);
+      this.tasksService.UpdateTask(this.taskId, this.task);
 
 	console.log(this.task.name);
   }
 
   LoadTask(id:string)
   {
-    this.tasksService.GetTask(id).then(function(response) {
-    
-           var data = response;
-           this.task = data;
-           //returning data to resolving promise
-           return data;
-        }, function(error) {
-            return 'There was an error getting data';
-        });
+    this.tasksService.GetTask(id).then(x=> console.log(x));
 
   }
 

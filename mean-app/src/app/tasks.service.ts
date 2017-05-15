@@ -24,9 +24,9 @@ return this.http.post('http://localhost:8000/tasks', data, {headers: this.header
     .then(res => res.json().data as Task);
   }
 
-  UpdateTask(task:Task){
+  UpdateTask(taskId: string, task:Task){
 	var data :string = JSON.stringify(task);
-	return this.http.put('http://localhost:8000/tasks/'+ task.id, data, {headers: this.headers})
+	return this.http.put('http://localhost:8000/tasks/'+ taskId, data, {headers: this.headers})
       .toPromise()
     .then(res => res.json().data as Task);
   }
@@ -35,8 +35,7 @@ return this.http.post('http://localhost:8000/tasks', data, {headers: this.header
   GetTask(id:string){
 
 return this.http.get('http://localhost:8000/tasks/'+id, {headers: this.headers})
-      .toPromise()
-    .then(res => res.json().data as Task);
+      .toPromise();
   }
 
     DeleteTask(id:string){
