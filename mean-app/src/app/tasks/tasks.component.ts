@@ -17,17 +17,18 @@ export class TasksComponent implements OnInit {
   ngOnInit() {
   this.tasksService.getAllTasks().subscribe(tasks => {
       this.tasks = tasks;
+      console.log(tasks);
     });
   }
 
-  UpdateTask(id:number){
+  UpdateTask(id:string){
 
       this.router.navigate(['/tasks/update', id]);
 
   }
 
 
-  DeleteTask(id:number){
+  DeleteTask(id:string){
 
       this.tasksService.DeleteTask(id);
 

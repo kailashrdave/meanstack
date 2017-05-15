@@ -24,7 +24,7 @@ const ROUTES = [
     component: TaskFormComponent
   },
   {
-    path: 'tasks/update:id',
+    path: 'tasks/update/:taskId',
     component: TaskFormComponent
   }
 ];

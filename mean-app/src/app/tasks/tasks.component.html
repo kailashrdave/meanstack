@@ -2,10 +2,10 @@
 <a routerLink="/tasks/create" routerLinkActive="active">Create</a>
   <div class="row" *ngFor="let task of tasks">
     <div class="card card-block">
-      <h4 class="card-title">{{ task.status }}</h4>
+      <h4 class="card-title">{{ task.name }}</h4>
       <p class="card-text">{{task.Created_date}}</p>
-      <button (click)="UpdateTask(task.id)">Edit</button>
-      <button (click)="DeleteTask(task.id)">X</button>
+      <button (click)="UpdateTask(task._id)">Edit</button>
+      <button (click)="DeleteTask(task._id)">X</button>
     </div>
   </div>
 </div>

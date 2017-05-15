@@ -32,14 +32,14 @@ return this.http.post('http://localhost:8000/tasks', data, {headers: this.header
   }
 
 
-  GetTask(id:number){
+  GetTask(id:string){
 
 return this.http.get('http://localhost:8000/tasks/'+id, {headers: this.headers})
       .toPromise()
     .then(res => res.json().data as Task);
   }
 
-    DeleteTask(id:number){
+    DeleteTask(id:string){
 
 return this.http.delete('http://localhost:8000/tasks/'+id, {headers: this.headers})
       .toPromise()
