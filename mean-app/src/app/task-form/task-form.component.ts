@@ -35,6 +35,7 @@ export class TaskFormComponent implements OnInit {
     if(this.taskId != "" && this.taskId != undefined)
     {
       this.LoadTask(this.taskId);
+      this.isUpdate = true;
     }
   }
   
@@ -50,7 +51,7 @@ export class TaskFormComponent implements OnInit {
 
   LoadTask(id:string)
   {
-    this.tasksService.GetTask(id).then(x=> console.log(x));
+    this.tasksService.GetTask(id).then(x=> this.task = x.json());
 
   }
 

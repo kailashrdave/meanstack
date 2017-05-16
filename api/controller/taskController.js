@@ -32,7 +32,10 @@ exports.get_task = function(req, res, next) {
 
 
 exports.update_task = function(req, res, next) {
-  Task.findOneAndUpdate(req.params.taskId, req.body, {new: true}, function(err, task) {
+  var task = req.body;
+  task._id=req.params.taskId;
+  console.log(task);
+  Task.findOneAndUpdate({"_id": req.params.taskId}, task, {new: true}, function(err, task) {
     if (err)
       res.send(err);
     res.json(task);
