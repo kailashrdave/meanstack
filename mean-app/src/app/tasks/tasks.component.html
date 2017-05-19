@@ -12,7 +12,8 @@
     	<div class="panel panel-default">
  			 <div class="panel-body">
 			      <strong>{{ task.name }}</strong>
-			      <p class="card-text">{{task.Created_date}}</p>
+			      <p class="text-danger">{{task.Created_date}}</p>
+						<p class="text-info">Created by: {{task.CratedBy}}</p>
 			      <button (click)="UpdateTask(task._id)" class="btn btn-xs btn-info">Edit</button>
 			      <button (click)="DeleteTask(task._id)"  class="btn btn-xs btn-danger">X</button>
 			 </div>
