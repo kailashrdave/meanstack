@@ -1,9 +1,10 @@
 # meanstack
-<strong> Task CRUD operations using Node JS , Express, Mongo DB and Angular  </strong>
+#<strong> Task CRUD operations using Node JS , Express, Mongo DB and Angular  </strong>
 <br/>
 <br/>
-<div class="clear:both;">
+<div>
 <strong>Screenshots</strong>
+
 ![Alt text](/docs/task-home.jpg?raw=false "Task Board")
 
 <br/><br/>
