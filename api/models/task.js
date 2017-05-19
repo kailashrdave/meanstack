@@ -19,6 +19,17 @@ var TaskSchema = new Schema({
       enum: ['pending', 'ongoing', 'completed']
     }],
     default: ['ongoing']
+  },
+  CratedBy:{
+    type: String,
+    default: ['Admin']
+  },
+  End_Date:{
+    type: Date,
+    default: Date.now
+  },
+  Description:{
+    type: String
   }
 });
 
