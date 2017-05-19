@@ -15,10 +15,7 @@ export class TasksComponent implements OnInit {
   constructor(private router: Router, private tasksService: TasksService) { }
 
   ngOnInit() {
-  this.tasksService.getAllTasks().subscribe(tasks => {
-      this.tasks = tasks;
-      console.log(tasks);
-    });
+    this.LoadTasks();
   }
 
   UpdateTask(id:string){
@@ -27,10 +24,17 @@ export class TasksComponent implements OnInit {
 
   }
 
+  LoadTasks(){
+  this.tasksService.getAllTasks().subscribe(tasks => {
+      this.tasks = tasks;
+      console.log(tasks);
+    });
+  }
 
   DeleteTask(id:string){
 
       this.tasksService.DeleteTask(id);
+      this.LoadTasks();
 
   }
 

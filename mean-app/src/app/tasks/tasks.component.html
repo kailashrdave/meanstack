@@ -1,11 +1,22 @@
 <div class="container">
-<a routerLink="/tasks/create" routerLinkActive="active">Create</a>
-  <div class="row" *ngFor="let task of tasks">
-    <div class="card card-block">
-      <h4 class="card-title">{{ task.name }}</h4>
-      <p class="card-text">{{task.Created_date}}</p>
-      <button (click)="UpdateTask(task._id)">Edit</button>
-      <button (click)="DeleteTask(task._id)">X</button>
+
+	
+
+<div class="form-group">
+	<div class="pull-right">
+		<a routerLink="/tasks/create" routerLinkActive="active">Create</a>
+	</div>
+</div>
+  <div class="row" >
+    <div class="col-md-3 text-xl" *ngFor="let task of tasks">
+    	<div class="panel panel-default">
+ 			 <div class="panel-body">
+			      <strong>{{ task.name }}</strong>
+			      <p class="card-text">{{task.Created_date}}</p>
+			      <button (click)="UpdateTask(task._id)" class="btn btn-xs btn-info">Edit</button>
+			      <button (click)="DeleteTask(task._id)"  class="btn btn-xs btn-danger">X</button>
+			 </div>
+		</div>
     </div>
   </div>
 </div>

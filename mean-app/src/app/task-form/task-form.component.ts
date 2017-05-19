@@ -22,10 +22,10 @@ export class TaskFormComponent implements OnInit {
   @Input()
   taskId:string;
   isUpdate:boolean=false;
-  constructor(private tasksService: TasksService,private router: ActivatedRoute) { }
+  constructor(private tasksService: TasksService,private activerouter: ActivatedRoute,private router: Router) { }
 
   ngOnInit() {
-   this.router
+   this.activerouter
         .params
         .subscribe(params => {
             
@@ -46,6 +46,7 @@ export class TaskFormComponent implements OnInit {
   else
       this.tasksService.UpdateTask(this.taskId, this.task);
 
+      this.router.navigate(['/tasks/']);
 	console.log(this.task.name);
   }
 

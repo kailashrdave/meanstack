@@ -1,11 +1,51 @@
-<p>
-  Task Details {{task.name}}
-</p>
+<div class="container">
+	<strong>
+		  Task Details {{task.name}}
+		</strong>
+	<div class="row">
+		
+<div class="col-md-6 col-sm-8 col-xs-12">
+		<div class="panel panel-default">
+			<div class="panel-body form-horizontal">
+				
+					
+					<input type="hidden" [(ngModel)]="task.id">
+					<div class="form-group">
+						<div class="col-md-2">
+							Name
+						</div>
+						<div class="col-md-2">
+							<input type="text" [(ngModel)]="task.name">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-2">
+							Date
+						</div>
+						<div class="col-md-2">
+							<input type="text" [(ngModel)]="task.Created_date">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-2">
+							Status
+						</div>
+						<div class="col-md-2">
+							<input type="text" [(ngModel)]="task.status">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-12">
+							<a class="pull-right btn btn-default" href="/tasks">Cancel</a>
+							<button class="pull-right btn btn-info" (click)="Save()">Save Task</button>
 
-<input type="hidden" [(ngModel)]="task.id">
-Name: <input type="text" [(ngModel)]="task.name">
-Date: <input type="text" [(ngModel)]="task.Created_date">
-Status: <input type="text" [(ngModel)]="task.status">
+						</div>
+					</div>
 
 
-<button (click)="Save()">Save Task</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
